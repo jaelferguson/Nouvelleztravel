@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NouvelleZTravel | Private Auckland Tours</title>
+
+<style>
+:root{
+  --sunset:#f6b17a;
+  --sky:#1f2933;
+  --soft:#fdf6f0;
+  --accent:#e07a5f;
+  --dark:#111827;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(180deg,#1f2933,#111827);
+  color:var(--soft);
+  line-height:1.6;
+}
+
+header{
+  padding:4rem 1.5rem;
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1502784444187-359ac186c5bb');
+  background-size:cover;
+  background-position:center;
+}
+
+header h1{
+  font-size:2.5rem;
+  margin-bottom:.5rem;
+  letter-spacing:.5px;
+}
+
+header p{
+  max-width:700px;
+  margin:auto;
+  color:#fcd9c0;
+}
+
+section{
+  padding:3rem 1.5rem;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2{
+  color:var(--sunset);
+  margin-bottom:1rem;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  border-radius:14px;
+  padding:1.5rem;
+  margin-bottom:1.5rem;
+}
+
+.grid{
+  display:grid;
+  gap:1.5rem;
+}
+@media(min-width:768px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+
+ul{padding-left:1.2rem}
+
+.highlight{
+  color:var(--sunset);
+  font-weight:600;
+}
+
+.price{
+  font-size:1.2rem;
+  color:#ffd6b0;
+}
+
+.review{
+  border-left:3px solid var(--accent);
+  padding-left:1rem;
+  margin-bottom:1.2rem;
+  font-style:italic;
+}
+
+footer{
+  text-align:center;
+  padding:2rem 1rem;
+  font-size:.9rem;
+  color:#d1d5db;
+}
+
+button{
+  background:var(--accent);
+  border:none;
+  color:white;
+  padding:.8rem 1.2rem;
+  border-radius:8px;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:.7rem;
+  margin-bottom:.8rem;
+  border-radius:6px;
+  border:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>NouvelleZTravel</h1>
+  <p>Secluded • Private • Calm Auckland Experiences  
+  <br>Solo personal tour guide — Jay (sometimes with Momo 🐾)</p>
+</header>
+
+<section>
+  <h2>About Your Guide</h2>
+  <div class="card">
+    <p>
+      I’m <span class="highlight">Jay</span>, a local Auckland guide offering
+      <span class="highlight">private, unrushed, air-conditioned SUV tours</span>.
+      No crowded buses. No scripts. Just flexible, friendly, local knowledge.
+    </p>
+    <p>
+      My dog <span class="highlight">Momo</span> — a white/cream Lab-Husky — may join us sometimes,
+      adding a calm, friendly presence to relaxed journeys.
+    </p>
+    <p>
+      Perfect for couples, solo travelers, and small groups who value privacy —
+      even a <span class="highlight">special place to propose</span>.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Tour Options</h2>
+
+  <div class="card">
+    <h3>🌅 Afternoon Escape</h3>
+    <p><strong>Monday – Wednesday | 2:30 – 5:30pm</strong></p>
+    <p class="price">$300 – $500 | Max 3 guests</p>
+    <p>Scenic & light activities. Calm, sunset-focused.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌄 Full Day Friday Experience</h3>
+    <p><strong>Friday | 9:00am – 3:00pm</strong></p>
+    <p class="price">$700 – $900 | 6 hours</p>
+    <p>Scenic views, shopping, activities — flexible flow.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Scenic Locations</h2>
+  <div class="card grid">
+    <ul>
+      <li>Piha Beach</li>
+      <li>North Head</li>
+      <li>Mission Bay</li>
+      <li>Bastion Point</li>
+    </ul>
+    <ul>
+      <li>Kohimarama</li>
+      <li>Duder Regional Park</li>
+      <li>One Tree Hill</li>
+      <li>Sky Tower (view stop)</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Activities (Fees Not Included)</h2>
+  <div class="card grid">
+    <ul>
+      <li>Snowplanet</li>
+      <li>Ziplining</li>
+      <li>Luge</li>
+      <li>Go-Karts</li>
+      <li>Mini Golf</li>
+    </ul>
+    <ul>
+      <li>Bowling</li>
+      <li>Laser Tag</li>
+      <li>Sheep Show (Friday)</li>
+      <li>Beer & Wine Tasting</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Shopping Stops</h2>
+  <div class="card">
+    <p>Manawa Bay • Sylvia Park • Commercial Bay • and more</p>
+  </div>
+</section>
+
+<section>
+  <h2>Pickup & Comfort</h2>
+  <div class="card">
+    <ul>
+      <li>Hotel pickup included</li>
+      <li>Airport pickup available (fee applies)</li>
+      <li>Cold water provided</li>
+      <li>Air-conditioned SUV</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Booking & Payment</h2>
+  <div class="card">
+    <ul>
+      <li>10% deposit via Wise (non-refundable)</li>
+      <li>Free reschedule with reasonable notice</li>
+      <li>Remaining balance paid on the day (Cash or Wise)</li>
+      <li>Decency & mutual respect always apply</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Guest Words (Examples)</h2>
+  <div class="card">
+    <div class="review">“Auckland felt calm and personal. No rush, just incredible views.”</div>
+    <div class="review">“Private, friendly, and flexible — exactly what we wanted.”</div>
+    <div class="review">“Felt like exploring with a local friend, not a tour company.”</div>
+    <p style="font-size:.85rem;color:#d1d5db">
+      *Example-style reviews. Replace with your real guest feedback anytime.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Request a Booking</h2>
+  <div class="card">
+    <form onsubmit="event.preventDefault(); alert('Thanks Jay will contact you on WhatsApp');">
+      <input placeholder="Your Name" required>
+      <input placeholder="WhatsApp Number" required>
+      <select>
+        <option>Afternoon Escape</option>
+        <option>Friday Full Day</option>
+      </select>
+      <input type="date" required>
+      <textarea placeholder="Tell me what you'd love to do..."></textarea>
+      <button>Send Request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  NouvelleZTravel © Auckland, New Zealand  
+  <br>Private • Secluded • Unrushed
+</footer>
+
+</body>
+</html>
