@@ -8,17 +8,16 @@
 <style>
 :root{
   --sunset:#f6b17a;
-  --sky:#1f2933;
-  --soft:#fdf6f0;
   --accent:#e07a5f;
-  --dark:#111827;
+  --dark:#0f172a;
+  --soft:#fdf6f0;
 }
 
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: linear-gradient(180deg,#1f2933,#111827);
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  background:linear-gradient(180deg,#1f2933,#0f172a);
   color:var(--soft);
   line-height:1.6;
 }
@@ -27,23 +26,14 @@ header{
   padding:4rem 1.5rem;
   text-align:center;
   background:
-    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7)),
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
     url('https://images.unsplash.com/photo-1502784444187-359ac186c5bb');
   background-size:cover;
   background-position:center;
 }
 
-header h1{
-  font-size:2.5rem;
-  margin-bottom:.5rem;
-  letter-spacing:.5px;
-}
-
-header p{
-  max-width:700px;
-  margin:auto;
-  color:#fcd9c0;
-}
+header h1{font-size:2.6rem;margin-bottom:.5rem}
+header p{color:#fcd9c0;max-width:720px;margin:auto}
 
 section{
   padding:3rem 1.5rem;
@@ -51,68 +41,52 @@ section{
   margin:auto;
 }
 
-h2{
-  color:var(--sunset);
-  margin-bottom:1rem;
-}
+h2{color:var(--sunset)}
 
 .card{
-  background:rgba(255,255,255,0.05);
-  border-radius:14px;
-  padding:1.5rem;
-  margin-bottom:1.5rem;
+  background:rgba(255,255,255,0.06);
+  border-radius:16px;
+  padding:1.6rem;
+  margin-bottom:1.6rem;
 }
 
 .grid{
   display:grid;
-  gap:1.5rem;
+  gap:1.4rem;
 }
 @media(min-width:768px){
-  .grid{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:repeat(3,1fr)}
 }
 
-ul{padding-left:1.2rem}
-
-.highlight{
-  color:var(--sunset);
-  font-weight:600;
+img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:14px;
 }
 
-.price{
-  font-size:1.2rem;
-  color:#ffd6b0;
-}
+.highlight{color:var(--sunset);font-weight:600}
 
-.review{
-  border-left:3px solid var(--accent);
-  padding-left:1rem;
-  margin-bottom:1.2rem;
-  font-style:italic;
-}
-
-footer{
-  text-align:center;
-  padding:2rem 1rem;
-  font-size:.9rem;
-  color:#d1d5db;
-}
+.price{color:#ffd6b0;font-size:1.2rem}
 
 button{
   background:var(--accent);
-  border:none;
   color:white;
-  padding:.8rem 1.2rem;
-  border-radius:8px;
+  border:none;
+  padding:.9rem 1.2rem;
+  border-radius:10px;
   font-size:1rem;
   cursor:pointer;
+  width:100%;
 }
 
-input,select,textarea{
-  width:100%;
-  padding:.7rem;
-  margin-bottom:.8rem;
-  border-radius:6px;
-  border:none;
+a{color:#ffd6b0;text-decoration:none}
+
+footer{
+  text-align:center;
+  padding:2.5rem 1rem;
+  font-size:.9rem;
+  color:#d1d5db;
 }
 </style>
 </head>
@@ -121,26 +95,32 @@ input,select,textarea{
 
 <header>
   <h1>NouvelleZTravel</h1>
-  <p>Secluded • Private • Calm Auckland Experiences  
-  <br>Solo personal tour guide — Jay (sometimes with Momo 🐾)</p>
+  <p>Private • Secluded • Calm Auckland Experiences  
+  <br>Personal local guide — Jay (sometimes with Momo 🐾)</p>
 </header>
 
 <section>
-  <h2>About Your Guide</h2>
+  <h2>About</h2>
   <div class="card">
     <p>
-      I’m <span class="highlight">Jay</span>, a local Auckland guide offering
-      <span class="highlight">private, unrushed, air-conditioned SUV tours</span>.
-      No crowded buses. No scripts. Just flexible, friendly, local knowledge.
+      I’m <span class="highlight">Jay</span>, a solo Auckland tour guide offering
+      private, flexible experiences for guests who value comfort, calm,
+      and local insight.
     </p>
     <p>
-      My dog <span class="highlight">Momo</span> — a white/cream Lab-Husky — may join us sometimes,
-      adding a calm, friendly presence to relaxed journeys.
+      No crowded buses. No rushing. Just scenic beauty, thoughtful stops,
+      air-conditioned SUV travel, and a relaxed pace — even a
+      <span class="highlight">special place to propose</span>.
     </p>
-    <p>
-      Perfect for couples, solo travelers, and small groups who value privacy —
-      even a <span class="highlight">special place to propose</span>.
-    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Signature Views</h2>
+  <div class="grid">
+    <img src="https://images.unsplash.com/photo-1502784444187-359ac186c5bb" alt="Piha Beach Auckland">
+    <img src="https://images.unsplash.com/photo-1542332213-31f87348057f" alt="North Head Devonport Rangitoto view">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Auckland beach sunset">
   </div>
 </section>
 
@@ -149,72 +129,16 @@ input,select,textarea{
 
   <div class="card">
     <h3>🌅 Afternoon Escape</h3>
-    <p><strong>Monday – Wednesday | 2:30 – 5:30pm</strong></p>
+    <p><strong>Mon – Wed | 2:30 – 5:30pm</strong></p>
     <p class="price">$300 – $500 | Max 3 guests</p>
-    <p>Scenic & light activities. Calm, sunset-focused.</p>
+    <p>Scenic highlights and relaxed activities.</p>
   </div>
 
   <div class="card">
-    <h3>🌄 Full Day Friday Experience</h3>
+    <h3>🌄 Friday Full Day</h3>
     <p><strong>Friday | 9:00am – 3:00pm</strong></p>
     <p class="price">$700 – $900 | 6 hours</p>
-    <p>Scenic views, shopping, activities — flexible flow.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Scenic Locations</h2>
-  <div class="card grid">
-    <ul>
-      <li>Piha Beach</li>
-      <li>North Head</li>
-      <li>Mission Bay</li>
-      <li>Bastion Point</li>
-    </ul>
-    <ul>
-      <li>Kohimarama</li>
-      <li>Duder Regional Park</li>
-      <li>One Tree Hill</li>
-      <li>Sky Tower (view stop)</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Activities (Fees Not Included)</h2>
-  <div class="card grid">
-    <ul>
-      <li>Snowplanet</li>
-      <li>Ziplining</li>
-      <li>Luge</li>
-      <li>Go-Karts</li>
-      <li>Mini Golf</li>
-    </ul>
-    <ul>
-      <li>Bowling</li>
-      <li>Laser Tag</li>
-      <li>Sheep Show (Friday)</li>
-      <li>Beer & Wine Tasting</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Shopping Stops</h2>
-  <div class="card">
-    <p>Manawa Bay • Sylvia Park • Commercial Bay • and more</p>
-  </div>
-</section>
-
-<section>
-  <h2>Pickup & Comfort</h2>
-  <div class="card">
-    <ul>
-      <li>Hotel pickup included</li>
-      <li>Airport pickup available (fee applies)</li>
-      <li>Cold water provided</li>
-      <li>Air-conditioned SUV</li>
-    </ul>
+    <p>Scenic, shopping, activities — flexible flow.</p>
   </div>
 </section>
 
@@ -224,44 +148,38 @@ input,select,textarea{
     <ul>
       <li>10% deposit via Wise (non-refundable)</li>
       <li>Free reschedule with reasonable notice</li>
-      <li>Remaining balance paid on the day (Cash or Wise)</li>
-      <li>Decency & mutual respect always apply</li>
+      <li>Balance paid on the day (Cash or Wise)</li>
+      <li>Hotel pickup included</li>
+      <li>Airport pickup available (fee applies)</li>
+      <li>Cold water provided</li>
     </ul>
   </div>
 </section>
 
 <section>
-  <h2>Guest Words (Examples)</h2>
+  <h2>Contact & Booking</h2>
   <div class="card">
-    <div class="review">“Auckland felt calm and personal. No rush, just incredible views.”</div>
-    <div class="review">“Private, friendly, and flexible — exactly what we wanted.”</div>
-    <div class="review">“Felt like exploring with a local friend, not a tour company.”</div>
-    <p style="font-size:.85rem;color:#d1d5db">
-      *Example-style reviews. Replace with your real guest feedback anytime.
+    <p><strong>WhatsApp:</strong><br>
+      <a href="https://wa.me/64210755147" target="_blank">
+        +64 21 075 5147 (Chat / Book)
+      </a>
     </p>
-  </div>
-</section>
-
-<section>
-  <h2>Request a Booking</h2>
-  <div class="card">
-    <form onsubmit="event.preventDefault(); alert('Thanks Jay will contact you on WhatsApp');">
-      <input placeholder="Your Name" required>
-      <input placeholder="WhatsApp Number" required>
-      <select>
-        <option>Afternoon Escape</option>
-        <option>Friday Full Day</option>
-      </select>
-      <input type="date" required>
-      <textarea placeholder="Tell me what you'd love to do..."></textarea>
-      <button>Send Request</button>
-    </form>
+    <p><strong>Email:</strong><br>
+      <a href="mailto:nouvelleztravel@gmail.com">
+        nouvelleztravel@gmail.com
+      </a>
+    </p>
+    <p style="margin-top:1rem">
+      <button onclick="window.open('https://wa.me/64210755147','_blank')">
+        Book via WhatsApp
+      </button>
+    </p>
   </div>
 </section>
 
 <footer>
   NouvelleZTravel © Auckland, New Zealand  
-  <br>Private • Secluded • Unrushed
+  <br>Private • Personal • Unrushed
 </footer>
 
 </body>
