@@ -7,12 +7,11 @@
 
 <style>
 :root{
-  --sand:#f4efe9;
+  --sand:#f6f1eb;
+  --linen:#faf7f3;
   --earth:#6b5f54;
-  --sunset:#e6a56d;
   --accent:#c26d4a;
-  --text:#3f3a36;
-  --soft:#ffffff;
+  --text:#2f2a26;
 }
 
 *{box-sizing:border-box}
@@ -25,32 +24,57 @@ body{
   line-height:1.7;
 }
 
-/* HERO */
-header{
+/* HERO – PIHA */
+.hero{
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
   padding:2rem 1.5rem;
-  background:
-    linear-gradient(rgba(255,248,240,.45), rgba(0,0,0,.25)),
-    url("piha-bg.jpg");
-  background-size:cover;
-  background-position:center;
+  background:url("piha-bg.jpg") center/cover no-repeat;
 }
 
-header h1{
+/* SECOND BACKGROUND – RANGITOTO */
+.feature-bg{
+  padding:5rem 1.5rem;
+  background:url("rangitoto-bg.jpg") center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+}
+
+/* CONTENT PANEL */
+.panel{
+  background:rgba(250,247,243,0.94);
+  border-radius:22px;
+  padding:2.8rem 2.2rem;
+  max-width:780px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* TYPOGRAPHY */
+h1{
   font-size:3rem;
   margin-bottom:.6rem;
-  color:#2f2a26;
 }
 
-header p{
-  max-width:760px;
-  margin:auto;
-  font-size:1.15rem;
-  color:#3f3a36;
+h2{
+  color:var(--earth);
+  margin-bottom:1rem;
+}
+
+p{
+  margin:.6rem 0;
+}
+
+.highlight{
+  color:var(--accent);
+  font-weight:600;
+}
+
+.price{
+  color:var(--accent);
+  font-size:1.1rem;
 }
 
 /* SECTIONS */
@@ -60,30 +84,13 @@ section{
   margin:auto;
 }
 
-h2{
-  color:var(--earth);
-  font-weight:600;
-  margin-bottom:1rem;
-}
-
 /* CARDS */
 .card{
-  background:rgba(255,255,255,0.9);
+  background:var(--linen);
   border-radius:22px;
   padding:2rem;
   margin-bottom:2rem;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* TEXT */
-.highlight{
-  color:var(--accent);
-  font-weight:600;
-}
-
-.price{
-  color:var(--accent);
-  font-size:1.1rem;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
 }
 
 /* LINKS & BUTTON */
@@ -102,11 +109,6 @@ button{
   font-size:1rem;
   cursor:pointer;
   width:100%;
-  margin-top:.5rem;
-}
-
-button:hover{
-  opacity:.9;
 }
 
 /* FOOTER */
@@ -121,34 +123,43 @@ footer{
 
 <body>
 
-<header>
-  <div>
+<!-- HERO -->
+<div class="hero">
+  <div class="panel">
     <h1>NouvelleZTravel</h1>
-    <p>
-      Private • Secluded • Calm Auckland Experiences<br>
-      Solo personal tour guide — Jay
-    </p>
+    <p>Private • Secluded • Calm Auckland Experiences</p>
+    <p>Solo personal tour guide — Jay</p>
   </div>
-</header>
+</div>
 
 <section>
   <h2>About</h2>
   <div class="card">
     <p>
       I’m <span class="highlight">Jay</span>, a local Auckland tour guide offering
-      private, unrushed experiences for travellers who value comfort,
-      privacy, and flexibility.
+      private, unrushed experiences designed around you.
     </p>
     <p>
-      No crowded buses. No strict schedules. Just calm scenic stops,
+      No crowded buses. No pressure. Just calm scenic locations,
       air-conditioned SUV travel, and genuine local knowledge.
     </p>
     <p>
-      Perfect for couples, solo travellers, and small groups —
+      Ideal for couples, solo travellers, and small groups —
       including a <span class="highlight">special place to propose</span>.
     </p>
   </div>
 </section>
+
+<!-- SECOND BACKGROUND SECTION -->
+<div class="feature-bg">
+  <div class="panel">
+    <h2>Private. Calm. Unrushed.</h2>
+    <p>
+      Experience Auckland at your own pace — flexible stops,
+      local insight, and peaceful locations away from crowds.
+    </p>
+  </div>
+</div>
 
 <section>
   <h2>Tour Options</h2>
@@ -157,25 +168,19 @@ footer{
     <h3>🌅 Afternoon Escape</h3>
     <p><strong>Monday – Wednesday | 2:30 – 5:30pm</strong></p>
     <p class="price">$300 – $500 | Max 3 guests</p>
-    <p>
-      A relaxed afternoon experience focused on scenic views,
-      calm locations, and sunset moments.
-    </p>
+    <p>Scenic, relaxed, sunset-focused experiences.</p>
   </div>
 
   <div class="card">
     <h3>🌄 Friday Full Day</h3>
     <p><strong>Friday | 9:00am – 3:00pm</strong></p>
     <p class="price">$700 – $900 | 6 hours</p>
-    <p>
-      A flexible full-day journey combining scenery, shopping,
-      and optional activities.
-    </p>
+    <p>Scenic views, shopping, and optional activities.</p>
   </div>
 </section>
 
 <section>
-  <h2>Booking & Contact</h2>
+  <h2>Contact & Booking</h2>
   <div class="card">
     <p><strong>WhatsApp</strong><br>
       <a href="https://wa.me/64210755147">+64 21 075 5147</a>
