@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NouvelleZTravel | Private Auckland Tours</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NouvelleZTravel | Private & Secluded Auckland Tours</title>
 
 <style>
 :root{
-  --sand:#f7f3ee;
-  --earth:#5f554c;
   --accent:#3f8f87;
-  --text:#2b2724;
+  --light:#f7f3ee;
+  --dark:#1e1e1e;
 }
 
 *{box-sizing:border-box}
@@ -18,120 +17,133 @@
 body{
   margin:0;
   font-family: system-ui,-apple-system,Segoe UI,sans-serif;
-  background:var(--sand);
-  color:var(--text);
-  line-height:1.6;
+  background:var(--light);
+  color:#222;
 }
 
-/* HERO */
+/* ---------- HERO ---------- */
 .hero{
   min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.45)),
+    url("hero-bg.jpg") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:2rem 1.5rem;
-  background:
-    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.35)),
-    url("piha-bg.jpg") center/cover no-repeat;
+  text-align:center;
+  padding:2rem;
 }
 
-/* GLASS PANEL */
-.hero-panel{
-  background:rgba(255,255,255,0.35);
-  backdrop-filter: blur(6px);
-  border-radius:28px;
-  padding:3rem 2.4rem;
-  max-width:760px;
+.hero h1{
+  font-family: Georgia, serif;
+  font-size:3.6rem;
+  color:white;
+  margin:.5rem 0;
+}
+
+.hero p{
+  color:white;
+  font-size:1.2rem;
+}
+
+.hero .cta{
+  margin-top:2rem;
+}
+
+.hero a{
+  display:inline-block;
+  padding:1rem 2rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:1rem;
+  margin:.4rem;
+}
+
+.primary{
+  background:var(--accent);
+  color:white;
+}
+
+.secondary{
+  border:1px solid rgba(255,255,255,.7);
+  color:white;
+}
+
+/* ---------- SECTION BACKGROUNDS ---------- */
+.bg-section{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:3rem 1.5rem;
   text-align:center;
 }
 
-/* TYPOGRAPHY */
-.kicker{
-  font-size:.85rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:#f0ebe6;
+.overlay{
+  background:rgba(255,255,255,.30); /* VERY TRANSPARENT */
+  backdrop-filter: blur(6px);
+  border-radius:28px;
+  padding:2.5rem;
+  max-width:900px;
+}
+
+h2{
+  font-family: Georgia, serif;
+  font-size:2.4rem;
   margin-bottom:.8rem;
 }
 
-.hero-panel h1{
-  font-family: "Playfair Display", Georgia, serif;
-  font-size:3.4rem;
-  margin:0 0 .6rem;
-  color:#ffffff;
+.price{
+  color:var(--accent);
+  font-weight:600;
 }
 
-.hero-panel p{
-  font-size:1.15rem;
-  color:#f3efe9;
-  margin:.4rem 0;
+/* AFTERNOON */
+.afternoon{
+  background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.35)),
+    url("afternoon-bg.jpg") center/cover no-repeat;
 }
 
-/* BUTTONS */
-.cta{
-  margin-top:1.6rem;
-  display:flex;
-  flex-direction:column;
-  gap:.8rem;
+/* FRIDAY */
+.friday{
+  background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.35)),
+    url("friday-bg.jpg") center/cover no-repeat;
 }
 
-.btn-primary{
-  background:var(--accent);
-  color:white;
-  padding:1rem;
-  border-radius:999px;
-  font-size:1rem;
-  text-decoration:none;
-}
-
-.btn-secondary{
-  border:1px solid rgba(255,255,255,.5);
-  color:white;
-  padding:1rem;
-  border-radius:999px;
-  text-decoration:none;
-}
-
-/* SECTIONS */
+/* ---------- CONTENT SECTIONS ---------- */
 section{
-  padding:3rem 1.4rem;
+  padding:3rem 1.5rem;
   max-width:900px;
   margin:auto;
 }
 
-h2{
-  font-family: "Playfair Display", Georgia, serif;
-  color:var(--earth);
-  font-size:2rem;
-}
-
-/* CARDS */
 .card{
-  background:rgba(255,255,255,.9);
+  background:white;
   border-radius:22px;
   padding:2rem;
-  margin-top:1.4rem;
+  margin-bottom:1.5rem;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-/* FEATURE BACKGROUND */
-.feature{
-  padding:4rem 1.5rem;
-  background:url("rangitoto-bg.jpg") center/cover no-repeat;
-  display:flex;
-  justify-content:center;
+/* ---------- REVIEWS ---------- */
+.review{
+  font-style:italic;
+  border-left:4px solid var(--accent);
+  padding-left:1rem;
+  margin:.8rem 0;
 }
 
-.feature .card{
-  max-width:720px;
-}
-
-/* FOOTER */
+/* ---------- FOOTER ---------- */
 footer{
   text-align:center;
   padding:2.5rem 1rem;
-  font-size:.85rem;
-  color:#6b5f54;
+  font-size:.9rem;
+  color:#666;
 }
+
+a{color:var(--accent)}
 </style>
 </head>
 
@@ -139,48 +151,83 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-panel">
-    <div class="kicker">Private & Secluded Auckland Tours</div>
+  <div>
+    <p style="letter-spacing:.25em;font-size:.85rem;">PRIVATE & SECLUDED AUCKLAND TOURS</p>
     <h1>NouvelleZTravel</h1>
     <p>Your personal guide to Auckland’s hidden gems</p>
 
     <div class="cta">
-      <a class="btn-primary" href="https://wa.me/64210755147">Book via WhatsApp</a>
-      <a class="btn-secondary" href="#tours">View Tours</a>
+      <a class="primary" href="https://wa.me/64210755147">Book via WhatsApp</a>
+      <a class="secondary" href="#afternoon">View Experiences</a>
     </div>
 
-    <p style="margin-top:1.6rem;font-size:.9rem;opacity:.85">
+    <p style="margin-top:1.5rem;font-size:.9rem;">
       Max 3 guests • Flexible • Relaxing • Private
     </p>
   </div>
 </div>
 
-<section id="tours">
-  <h2>About</h2>
-  <div class="card">
-    I’m <strong>Jay</strong>, a local Auckland tour guide offering calm,
-    private experiences away from crowds — no rushing, no buses,
-    just thoughtful journeys at your pace.
-  </div>
-</section>
-
-<div class="feature">
-  <div class="card">
-    <h2>Calm. Personal. Unrushed.</h2>
-    Experience Auckland with flexibility, comfort,
-    and genuine local knowledge.
+<!-- AFTERNOON ESCAPE -->
+<div id="afternoon" class="bg-section afternoon">
+  <div class="overlay">
+    <h2>🌅 Afternoon Escape</h2>
+    <p class="price">$300 – $500 · Max 3 guests</p>
+    <p>Monday – Wednesday · 2:30pm – 5:30pm · 3 hours</p>
+    <p>
+      A calm, scenic afternoon experience — perfect for couples,
+      solo travellers, and special occasions.
+    </p>
   </div>
 </div>
 
+<!-- FRIDAY FULL DAY -->
+<div class="bg-section friday">
+  <div class="overlay">
+    <h2>🌄 Friday Full Day</h2>
+    <p class="price">$750 – $920 · 6 hours</p>
+    <p>Friday · 9:00am – 3:00pm 🇳🇿</p>
+    <p>
+      Scenic locations, shopping, activities or a custom flow —
+      unrushed and fully private.
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
 <section>
-  <h2>Contact</h2>
   <div class="card">
-    WhatsApp: <a href="https://wa.me/64210755147">+64 21 075 5147</a><br>
-    Email: <a href="mailto:nouvelleztravel@gmail.com">nouvelleztravel@gmail.com</a>
+    I’m <strong>Jay</strong>, a personal Auckland tour guide offering private,
+    flexible experiences away from crowded buses.
+    <br><br>
+    My dog <strong>Momo</strong> (Lab–Husky, white/cream) may join us sometimes —
+    friendly, calm, and optional.
+  </div>
+</section>
+
+<!-- INCLUSIONS -->
+<section>
+  <div class="card">
+    Hotel pickup included · Airport pickup available (fee)<br>
+    Cold water provided · Air-conditioned SUV<br>
+    10% deposit via Wise (non-refundable)<br>
+    Free reschedule with reasonable notice<br>
+    Balance payable on the day (Cash or Wise)
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <h2>Guest Words</h2>
+  <div class="card">
+    <div class="review">“A calm, private way to experience Auckland.”</div>
+    <div class="review">“Felt personal, relaxed, and beautifully paced.”</div>
+    <div class="review">“Exactly what a boutique tour should feel like.”</div>
   </div>
 </section>
 
 <footer>
+  WhatsApp: <a href="https://wa.me/64210755147">+64 21 075 5147</a><br>
+  Instagram & Facebook: <strong>NouvelleZTravel</strong><br>
   NouvelleZTravel © Auckland, New Zealand
 </footer>
 
