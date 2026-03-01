@@ -7,80 +7,90 @@
 
 <style>
 :root{
-  --sunset:#f6b17a;
-  --accent:#e07a5f;
-  --dark:#0f172a;
-  --soft:#fdf6f0;
+  --sand:#f4efe9;
+  --earth:#6b5f54;
+  --sunset:#e6a56d;
+  --accent:#c26d4a;
+  --text:#3f3a36;
+  --soft:#ffffff;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-  background:#0f172a;
-  color:var(--soft);
-  line-height:1.6;
+  font-family: system-ui,-apple-system,Segoe UI,sans-serif;
+  background:var(--sand);
+  color:var(--text);
+  line-height:1.7;
 }
 
-/* HERO BACKGROUND USING YOUR PIHA PHOTO */
+/* HERO */
 header{
-  min-height:90vh;
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:2rem 1.5rem;
   background:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.8)),
+    linear-gradient(rgba(255,248,240,.45), rgba(0,0,0,.25)),
     url("piha-bg.jpg");
   background-size:cover;
   background-position:center;
 }
 
 header h1{
-  font-size:2.8rem;
+  font-size:3rem;
   margin-bottom:.6rem;
+  color:#2f2a26;
 }
 
 header p{
-  color:#fcd9c0;
   max-width:760px;
   margin:auto;
-  font-size:1.1rem;
+  font-size:1.15rem;
+  color:#3f3a36;
 }
 
+/* SECTIONS */
 section{
-  padding:3rem 1.5rem;
+  padding:4rem 1.5rem;
   max-width:900px;
   margin:auto;
 }
 
 h2{
-  color:var(--sunset);
+  color:var(--earth);
+  font-weight:600;
   margin-bottom:1rem;
 }
 
+/* CARDS */
 .card{
-  background:rgba(255,255,255,0.06);
-  border-radius:18px;
-  padding:1.8rem;
-  margin-bottom:1.8rem;
+  background:rgba(255,255,255,0.9);
+  border-radius:22px;
+  padding:2rem;
+  margin-bottom:2rem;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
+/* TEXT */
 .highlight{
-  color:var(--sunset);
+  color:var(--accent);
   font-weight:600;
 }
 
 .price{
-  color:#ffd6b0;
+  color:var(--accent);
   font-size:1.1rem;
 }
 
+/* LINKS & BUTTON */
 a{
-  color:#ffd6b0;
+  color:var(--accent);
   text-decoration:none;
+  font-weight:500;
 }
 
 button{
@@ -88,17 +98,23 @@ button{
   color:white;
   border:none;
   padding:1rem;
-  border-radius:12px;
+  border-radius:14px;
   font-size:1rem;
   cursor:pointer;
   width:100%;
+  margin-top:.5rem;
 }
 
+button:hover{
+  opacity:.9;
+}
+
+/* FOOTER */
 footer{
   text-align:center;
-  padding:2.5rem 1rem;
+  padding:3rem 1rem;
   font-size:.9rem;
-  color:#d1d5db;
+  color:#6b5f54;
 }
 </style>
 </head>
@@ -110,7 +126,7 @@ footer{
     <h1>NouvelleZTravel</h1>
     <p>
       Private • Secluded • Calm Auckland Experiences<br>
-      Solo personal guide — Jay
+      Solo personal tour guide — Jay
     </p>
   </div>
 </header>
@@ -124,12 +140,12 @@ footer{
       privacy, and flexibility.
     </p>
     <p>
-      No crowded buses. No pressure. Just calm scenic stops,
+      No crowded buses. No strict schedules. Just calm scenic stops,
       air-conditioned SUV travel, and genuine local knowledge.
     </p>
     <p>
-      Ideal for couples, solo travellers, and small groups —
-      even a <span class="highlight">special place to propose</span>.
+      Perfect for couples, solo travellers, and small groups —
+      including a <span class="highlight">special place to propose</span>.
     </p>
   </div>
 </section>
@@ -141,19 +157,25 @@ footer{
     <h3>🌅 Afternoon Escape</h3>
     <p><strong>Monday – Wednesday | 2:30 – 5:30pm</strong></p>
     <p class="price">$300 – $500 | Max 3 guests</p>
-    <p>Relaxed scenic experience with a calm pace.</p>
+    <p>
+      A relaxed afternoon experience focused on scenic views,
+      calm locations, and sunset moments.
+    </p>
   </div>
 
   <div class="card">
     <h3>🌄 Friday Full Day</h3>
     <p><strong>Friday | 9:00am – 3:00pm</strong></p>
     <p class="price">$700 – $900 | 6 hours</p>
-    <p>Scenic views, shopping, and optional activities.</p>
+    <p>
+      A flexible full-day journey combining scenery, shopping,
+      and optional activities.
+    </p>
   </div>
 </section>
 
 <section>
-  <h2>Contact & Booking</h2>
+  <h2>Booking & Contact</h2>
   <div class="card">
     <p><strong>WhatsApp</strong><br>
       <a href="https://wa.me/64210755147">+64 21 075 5147</a>
@@ -164,7 +186,7 @@ footer{
       </a>
     </p>
     <button onclick="window.open('https://wa.me/64210755147','_blank')">
-      Book via WhatsApp
+      Enquire via WhatsApp
     </button>
   </div>
 </section>
