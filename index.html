@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NouvelleZTravel | Private Auckland Tours</title>
 
 <style>
@@ -19,7 +19,6 @@ body{
   font-family:system-ui,-apple-system,Segoe UI,sans-serif;
   background:linear-gradient(180deg,#1f2933,#0f172a);
   color:var(--soft);
-  line-height:1.6;
 }
 
 header{
@@ -50,6 +49,20 @@ h2{color:var(--sunset)}
   margin-bottom:1.6rem;
 }
 
+.about-grid{
+  display:grid;
+  gap:1.5rem;
+}
+@media(min-width:768px){
+  .about-grid{grid-template-columns:1fr 1.4fr}
+}
+
+.profile{
+  width:100%;
+  max-width:320px;
+  border-radius:18px;
+}
+
 .grid{
   display:grid;
   gap:1.4rem;
@@ -58,7 +71,7 @@ h2{color:var(--sunset)}
   .grid{grid-template-columns:repeat(3,1fr)}
 }
 
-img{
+.scenic{
   width:100%;
   height:260px;
   object-fit:cover;
@@ -67,13 +80,11 @@ img{
 
 .highlight{color:var(--sunset);font-weight:600}
 
-.price{color:#ffd6b0;font-size:1.2rem}
-
 button{
   background:var(--accent);
   color:white;
   border:none;
-  padding:.9rem 1.2rem;
+  padding:1rem;
   border-radius:10px;
   font-size:1rem;
   cursor:pointer;
@@ -95,91 +106,58 @@ footer{
 
 <header>
   <h1>NouvelleZTravel</h1>
-  <p>Private • Secluded • Calm Auckland Experiences  
-  <br>Personal local guide — Jay (sometimes with Momo 🐾)</p>
+  <p>Private • Secluded • Calm Auckland Experiences<br>
+  Your personal local guide — Jay</p>
 </header>
 
 <section>
-  <h2>About</h2>
-  <div class="card">
-    <p>
-      I’m <span class="highlight">Jay</span>, a solo Auckland tour guide offering
-      private, flexible experiences for guests who value comfort, calm,
-      and local insight.
-    </p>
-    <p>
-      No crowded buses. No rushing. Just scenic beauty, thoughtful stops,
-      air-conditioned SUV travel, and a relaxed pace — even a
-      <span class="highlight">special place to propose</span>.
-    </p>
+  <h2>Meet Your Guide</h2>
+  <div class="card about-grid">
+    <img src="jay.jpg" alt="Jay Auckland Tour Guide" class="profile">
+    <div>
+      <p>
+        Hi, I’m <span class="highlight">Jay</span>, a solo Auckland tour guide
+        offering private, unrushed experiences.
+      </p>
+      <p>
+        No crowded buses. No rush. Just scenic beauty, comfort,
+        flexibility, and genuine local knowledge.
+      </p>
+      <p>
+        Ideal for couples, solo travellers, and small groups —
+        even a <span class="highlight">special place to propose</span>.
+      </p>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>Signature Views</h2>
+  <h2>Signature Auckland Views</h2>
   <div class="grid">
-    <img src="https://images.unsplash.com/photo-1502784444187-359ac186c5bb" alt="Piha Beach Auckland">
-    <img src="https://images.unsplash.com/photo-1542332213-31f87348057f" alt="North Head Devonport Rangitoto view">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Auckland beach sunset">
-  </div>
-</section>
-
-<section>
-  <h2>Tour Options</h2>
-
-  <div class="card">
-    <h3>🌅 Afternoon Escape</h3>
-    <p><strong>Mon – Wed | 2:30 – 5:30pm</strong></p>
-    <p class="price">$300 – $500 | Max 3 guests</p>
-    <p>Scenic highlights and relaxed activities.</p>
-  </div>
-
-  <div class="card">
-    <h3>🌄 Friday Full Day</h3>
-    <p><strong>Friday | 9:00am – 3:00pm</strong></p>
-    <p class="price">$700 – $900 | 6 hours</p>
-    <p>Scenic, shopping, activities — flexible flow.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Booking & Payment</h2>
-  <div class="card">
-    <ul>
-      <li>10% deposit via Wise (non-refundable)</li>
-      <li>Free reschedule with reasonable notice</li>
-      <li>Balance paid on the day (Cash or Wise)</li>
-      <li>Hotel pickup included</li>
-      <li>Airport pickup available (fee applies)</li>
-      <li>Cold water provided</li>
-    </ul>
+    <img class="scenic" src="https://images.unsplash.com/photo-1542332213-31f87348057f" alt="Piha Beach New Zealand">
+    <img class="scenic" src="https://images.unsplash.com/photo-1507680434567-5739c80be1ac" alt="North Head Devonport Rangitoto Island">
+    <img class="scenic" src="https://images.unsplash.com/photo-1518684079-3c830dcef090" alt="Mission Bay Beach Auckland">
   </div>
 </section>
 
 <section>
   <h2>Contact & Booking</h2>
   <div class="card">
-    <p><strong>WhatsApp:</strong><br>
-      <a href="https://wa.me/64210755147" target="_blank">
-        +64 21 075 5147 (Chat / Book)
-      </a>
+    <p><strong>WhatsApp</strong><br>
+      <a href="https://wa.me/64210755147">+64 21 075 5147</a>
     </p>
-    <p><strong>Email:</strong><br>
-      <a href="mailto:nouvelleztravel@gmail.com">
-        nouvelleztravel@gmail.com
-      </a>
+    <p><strong>Email</strong><br>
+      <a href="mailto:nouvelleztravel@gmail.com">nouvelleztravel@gmail.com</a>
     </p>
-    <p style="margin-top:1rem">
-      <button onclick="window.open('https://wa.me/64210755147','_blank')">
-        Book via WhatsApp
-      </button>
-    </p>
+    <button onclick="window.open('https://wa.me/64210755147','_blank')">
+      Book via WhatsApp
+    </button>
   </div>
 </section>
 
 <footer>
-  NouvelleZTravel © Auckland, New Zealand  
-  <br>Private • Personal • Unrushed
+  NouvelleZTravel © Auckland, New Zealand<br>
+  Private • Personal • Unrushed
 </footer>
 
 </body>
