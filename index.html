@@ -387,14 +387,6 @@ footer{
     <label>Email (optional)</label>
     <input type="email" id="email">
 
-    <label>Preferred date</label>
-    <input type="date" id="date" required>
-
-    <label>Tour type</label>
-    <select id="tour">
-      <option>Afternoon Escape (Mon–Wed)</option>
-      <option>Friday Full Day</option>
-    </select>
 
     <label>Message</label>
     <textarea id="message" placeholder="Tell me a little about your plans…"></textarea>
@@ -439,15 +431,11 @@ function sendBooking(e){
 
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
-  const date = document.getElementById("date").value;
-  const tour = document.getElementById("tour").value;
   const message = document.getElementById("message").value;
 
   const text =
 `Hello Jay 👋
 My name is ${name}.
-Tour: ${tour}
-Preferred date: ${date}
 Email: ${email || "N/A"}
 
 Message:
@@ -455,7 +443,8 @@ ${message}`;
 
   const url = "https://wa.me/64210755147?text=" + encodeURIComponent(text);
   window.open(url, "_blank");
-}
+  }
+  
 </script>
 
 </body>
