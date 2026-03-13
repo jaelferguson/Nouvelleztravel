@@ -4,441 +4,103 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NouvelleZTravel | Private & Secluded Auckland Tours</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-:root{
-  --sand:#f5f2ec;
-  --green:#2f4f45;
-  --accent:#4c8f86;
-  --text:#2b2b2b;
-}
-
+:root{--sand:#f5f2ec;--green:#2f4f45;--accent:#4c8f86;--text:#2b2b2b;}
 *{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, sans-serif;background:var(--sand);color:var(--text);line-height:1.6;}
 
-body{
-  margin:0;
-  font-family:Inter, system-ui, sans-serif;
-  background:var(--sand);
-  color:var(--text);
-  line-height:1.6;
-}
-/* ---------- BOOKING FORM ---------- */
-.booking{
-  background:white;
-  border-radius:28px;
-  padding:2.5rem;
-  max-width:640px;
-  margin:3rem auto;
-}
+/* HERO - Spacing adjusted for better balance */
+.hero{min-height:90vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem; background:linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.5)), url("hero-bg.jpg") center/cover no-repeat;}
+.hero-content{max-width:820px; color:#fff;}
+.kicker{letter-spacing:.25em; font-size:.7rem; text-transform:uppercase; margin-bottom:1rem; opacity:0.9;}
+.hero h1{font-family:"Playfair Display", serif; font-size: clamp(2.5rem, 10vw, 4rem); line-height:1; margin:0.5rem 0;}
+.tagline{font-family:"Playfair Display", serif; font-style:italic; font-size:1.2rem; margin-bottom:2rem;}
+.cta{display:flex; flex-direction:column; gap:1rem; align-items:center;}
+.cta a{text-decoration:none; padding:1rem 2rem; border-radius:999px; width:100%; max-width:320px; font-weight:500; background:var(--accent); color:white;}
+.meta{margin-top:2rem; font-size:0.9rem; opacity:0.8;}
 
-.booking h3{
-  font-family:"Playfair Display", serif;
-  font-size:2rem;
-  margin-bottom:1.2rem;
-}
+/* CARDS & SECTIONS */
+section{max-width:1000px; margin:auto; padding:3rem 1.5rem;}
+.section-title{text-align:center; margin-bottom:2rem;}
+.section-title h2{font-family:"Playfair Display", serif; font-size:2.2rem; margin:0;}
+.cards{display:grid; gap:2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));}
+.card{background:white; border-radius:24px; padding:2rem;}
+.card.dark{background:var(--green); color:white;}
+.price{font-family:"Playfair Display", serif; font-size:1.5rem; margin:1rem 0;}
+.usd{font-size:0.9rem; font-family:Inter; color:#666;}
+.card.dark .usd{color:#aaa;}
+.group{font-size:0.85rem; font-weight:500; margin-top:0.2rem;}
 
-.booking label{
-  display:block;
-  font-size:.85rem;
-  margin:.8rem 0 .2rem;
-  color:#555;
-}
-
-.booking input,
-.booking select,
-.booking textarea{
-  width:100%;
-  padding:.9rem 1rem;
-  border-radius:14px;
-  border:1px solid #ddd;
-  font-family:inherit;
-  font-size:.95rem;
-}
-
-.booking textarea{
-  min-height:110px;
-  resize:vertical;
-}
-
-.booking button{
-  margin-top:1.4rem;
-  width:100%;
-  padding:1rem;
-  border:none;
-  border-radius:999px;
-  background:var(--accent);
-  color:white;
-  font-size:1rem;
-  cursor:pointer;
-}
-/* ---------- HERO ---------- */
-
-.hero{
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.45)),
-    url("hero-bg.jpg") center 45% / cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:2rem;
-}
-
-.hero-content{
-  max-width:820px;
-  color:rgba(255,255,255,0.95);
-}
-
-.kicker{
-  letter-spacing:.28em;
-  font-size:.75rem;
-  margin-bottom:.8rem;
-}
-  
-.hero h1{
-  font-family:"Playfair Display", serif;
-  font-size: clamp(2.2rem, 8vw, 3.6rem);
-  line-height: 1.05;
-  margin:.3rem 0;
-  word-break: break-word;
-}
-
-
-.tagline{
-  font-family:"Playfair Display", serif;
-  font-style:italic;
-  font-size:1.15rem;
-}
-
-.cta{
-  margin-top:2rem;
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
-  align-items:center;
-}
-
-.cta a{
-  text-decoration:none;
-  padding:1rem 2rem;
-  border-radius:999px;
-  width:100%;
-  max-width:360px;
-  font-size:1rem;
-}
-
-.primary{
-  background:var(--accent);
-  color:white;
-}
-
-.secondary{
-  background:var(--accent);
-  color:white;
-}
-
-
-.meta{
-  margin-top:1.4rem;
-  font-size:.9rem;
-}
-
-/* ---------- SECTIONS ---------- */
-section{
-  max-width:1000px;
-  margin:auto;
-  padding:4rem 1.5rem;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:2.5rem;
-}
-
-.section-title small{
-  letter-spacing:.3em;
-  color:#6b7f76;
-}
-
-.section-title h2{
-  font-family:"Playfair Display", serif;
-  font-size:2.4rem;
-  margin:.4rem 0;
-}
-
-/* ---------- CARDS ---------- */
-.cards{
-  display:grid;
-  gap:2rem;
-}
-
-.card{
-  background:white;
-  border-radius:26px;
-  padding:2.2rem;
-}
-
-.card.dark{
-  background:var(--green);
-  color:white;
-}
-
-.badge{
-  background:var(--accent);
-  color:white;
-  display:inline-block;
-  padding:.3rem .8rem;
-  border-radius:999px;
-  font-size:.7rem;
-  margin-bottom:.8rem;
-}
-
-.card h3{
-  font-family:"Playfair Display", serif;
-  font-size:1.8rem;
-}
-
-.price{
-  font-family:"Playfair Display", serif;
-  font-size:1.4rem;
-}
-
-.tags{
-  display:flex;
-  gap:.6rem;
-  flex-wrap:wrap;
-  margin-top:1rem;
-}
-
-.tag{
-  padding:.4rem .9rem;
-  border-radius:999px;
-  font-size:.75rem;
-  background:rgba(0,0,0,.05);
-}
-
-.card.dark .tag{
-  background:rgba(255,255,255,.15);
-}
-
-/* ---------- ABOUT ---------- */
-.about{
-  display:grid;
-  gap:2rem;
-}
-
-.about img{
-  width:160px;
-  border-radius:100%;
-}
-
-/* ---------- REVIEWS ---------- */
-.review{
-  font-style:italic;
-  border-left:4px solid var(--accent);
-  padding-left:1rem;
-  margin:1rem 0;
-}
-
-/* ---------- CONNECT ---------- */
-.connect{
-  background:var(--green);
-  color:white;
-  text-align:center;
-}
-
-.contact-card {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  }
-
-.connect-card{
-  background:rgba(255,255,255,.1);
-  padding:1.6rem;
-  border-radius:22px;
-  margin:1rem auto;
-  max-width:420px;
-}
-
-footer{
-  background:var(--green);
-  color:#cfd8d4;
-  text-align:center;
-  padding:2rem;
-  font-size:.85rem;
-}
+/* BOOKING & FOOTER */
+.booking{background:white; border-radius:24px; padding:2rem; max-width:600px; margin:auto;}
+.booking input, .booking textarea{width:100%; padding:0.8rem; margin:0.5rem 0 1rem; border:1px solid #ddd; border-radius:12px;}
+.booking button{width:100%; padding:1rem; border:none; border-radius:999px; background:var(--accent); color:white; font-size:1rem; cursor:pointer;}
+.connect{background:var(--green); color:white; padding:3rem 1.5rem; text-align:center;}
+footer{text-align:center; padding:2rem; font-size:0.8rem; background:var(--sand);}
 </style>
 </head>
-
 <body>
 
 <div class="hero">
   <div class="hero-content">
-    <div class="kicker">PRIVATE & SECLUDED AUCKLAND TOURS · MAX 3</div>
+    <div class="kicker">PRIVATE & SECLUDED AUCKLAND TOURS</div>
     <h1>NouvelleZTravel</h1>
     <div class="tagline">Auckland Secret Escapes</div>
-
     <div class="cta">
-
-      <a class="primary" href="https://calendly.com/nouvelleztravel" target="_blank">
-      Book Your Private Auckland Tour
-      </a>
-
-      <a class="secondary" href="https://wa.me/64210755147" target="_blank">
-      Chat on WhatsApp
-      </a>
-   
+      <a href="https://calendly.com/nouvelleztravel" target="_blank">Book Your Private Tour</a>
+      <a href="https://wa.me/64210755147" target="_blank">Chat on WhatsApp</a>
     </div>
-  
-
-    <div class="meta">Calm · Private · Flexible · No crowded buses</div>
+    <div class="meta">Calm · Private · Flexible · Up to 3 guests</div>
   </div>
 </div>
 
 <section id="tours">
-  <div class="section-title">
-    <small>EXPERIENCES</small>
-    <h2>Choose Your Tour</h2>
-  </div>
-
+  <div class="section-title"><h2>Choose Your Tour</h2></div>
   <div class="cards">
     <div class="card">
-      <div class="price">
-  $295 NZD
-  <div class="group">Flat rate for up to 3 guests</div>
-</div>
-      <p>Mon – Wed · 3 hrs · 2:30 – 5:30 pm · Max 3</p>
+      <h3>Afternoon Escape</h3>
+      <div class="price">$295 NZD <div class="usd">≈ $175 USD</div></div>
+      <div class="group">Flat rate for up to 3 guests</div>
+      <p>Mon–Wed · 3 hrs · 2:30–5:30 pm</p>
       <p>Scenic drives, beaches, hidden local spots. Relaxed, unrushed.</p>
-      <div class="tags">
-        <div class="tag">Piha</div>
-        <div class="tag">Mission Bay</div>
-        <div class="tag">Bastion Point</div>
-      </div>
     </div>
-
     <div class="card dark">
-      <div class="badge">POPULAR</div>
       <h3>Friday Full Day</h3>
-      <div class="price">
-  $550 NZD
-  <div class="group">Flat rate for up to 3 guests</div>
-</div>
-      <p>Friday · 6 hrs · 9:00 am – 3:00 pm 🇳🇿</p>
+      <div class="price">$550 NZD <div class="usd">≈ $325 USD</div></div>
+      <div class="group">Flat rate for up to 3 guests</div>
+      <p>Friday · 6 hrs · 9:00 am–3:00 pm</p>
       <p>2–3 activities: scenic, adventure, shopping or tasting.</p>
-      <div class="tags">
-        <div class="tag">Scenic</div>
-        <div class="tag">Activities</div>
-        <div class="tag">Shopping</div>
-      </div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="section-title">
-    <small>YOUR GUIDE</small>
-    <h2>Meet Jay</h2>
-  </div>
-
-  <div class="about">
-    <img src="jay.jpg" alt="Jay - Auckland Tour Guide">
-    <p>
-      Kia ora! My name is <strong>Jaël</strong>, but everyone calls me <strong>Jay</strong>. 
-      <br><br>
-      I’m a professional, 42-year-old Auckland guide. I love sharing our city’s hidden gems through calm, private, and safe experiences. As a solo female guide, I pride myself on providing a welcoming, comfortable space for every guest. It would be my absolute pleasure to show you the best of my home!
-      <br><br>
-      My dog <strong>Momo</strong> (Lab–Husky, white/cream) may join us sometimes 🐾
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="section-title">
-    <small>REVIEWS</small>
-    <h2>Guest Words</h2>
-  </div>
-
-  <div class="review">“Private, relaxed, and beautifully paced.”</div>
-  <div class="review">“A special way to experience Auckland.”</div>
-</section>
-
-  <section id="booking">
-  <div class="section-title">
-    <small>BOOKING</small>
-    <h2>Request Your Tour</h2>
-  </div>
-
+<section id="booking">
+  <div class="section-title"><h2>Request Your Tour</h2></div>
   <form class="booking" onsubmit="sendBooking(event)">
-    <h3>Private Tour Enquiry</h3>
-
-    <label>Name</label>
-    <input type="text" id="name" required>
-
-    <label>Email (optional)</label>
-    <input type="email" id="email">
-
-
-    <label>Message</label>
-    <textarea id="message" placeholder="Tell me a little about your plans…"></textarea>
-
+    <label>Name</label><input type="text" id="name" required>
+    <label>Email</label><input type="email" id="email">
+    <label>Message</label><textarea id="message" placeholder="Tell me your plans..."></textarea>
     <button type="submit">Send Booking Request</button>
   </form>
-  </section>
-  
-<section class="connect">
-  <small>LET’S CONNECT</small>
-  <h2>Ready to Explore?</h2>
-
-  <div class="connect-card">
-<a href="https://wa.me/64210755147" target="_blank" class="contact-card">
-  WhatsApp<br><strong>+64 21 075 5147</strong>
-</a>
-  </div>
-    
-  <div class="connect-card">
-    Email<br><strong>nouvelleztravel@gmail.com</strong>
-  </div>
-
-  <div class="connect-card">
-    Instagram <br><strong>NouvelleZTravel</strong>
-  </div>
-
-  <p style="margin-top:1.5rem;font-size:.9rem;">
-    10% deposit via Wise · Non-refundable · Reschedule with notice<br>
-    Hotel pickup included · Airport pickup available (fee)<br>
-    Complimentary water provided
-  </p>
 </section>
 
-<footer>
-  © 2026 NouvelleZTravel · Auckland, New Zealand 🇳🇿
-</footer>
-<meta name="description" content="Private & secluded Auckland tours with a personal guide. Scenic escapes, flexible itineraries, and calm experiences for up to 3 guests.">
+<section class="connect">
+  <h2>Ready to Explore?</h2>
+  <p>WhatsApp: +64 21 075 5147<br>Email: nouvelleztravel@gmail.com</p>
+  <p style="font-size:0.8rem; opacity:0.8;">10% deposit via Wise · Hotel pickup included</p>
+</section>
+
+<footer>© 2026 NouvelleZTravel · Auckland, New Zealand</footer>
+
 <script>
 function sendBooking(e){
   e.preventDefault();
-
   const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  const text =
-`Hello Jay 👋
-My name is ${name}.
-Email: ${email || "N/A"}
-
-Message:
-${message}`;
-
-  const url = "https://wa.me/64210755147?text=" + encodeURIComponent(text);
+  const msg = document.getElementById("message").value;
+  const url = `https://wa.me/64210755147?text=Hello Jay, I am ${name}. ${msg}`;
   window.open(url, "_blank");
-  }
-  
+}
 </script>
-
 </body>
 </html>
