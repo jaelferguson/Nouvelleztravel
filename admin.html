@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NouvelleZTravel – My Calendar</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#f5f2ec;--green:#2f4f45;--accent:#4c8f86;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Inter,sans-serif;background:var(--sand);color:#2b2b2b;min-height:100vh;}
+
+.top{background:var(--green);color:white;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
+.top h1{font-family:"Playfair Display",serif;font-size:1.3rem;}
+.top span{font-size:0.8rem;opacity:0.7;}
+
+.container{max-width:480px;margin:2rem auto;padding:0 1rem;}
+
+/* Month nav */
+.month-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.month-nav button{background:white;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;font-size:1.1rem;cursor:pointer;}
+.month-nav h2{font-family:"Playfair Display",serif;font-size:1.3rem;}
+
+/* Calendar grid */
+.cal{background:white;border-radius:20px;padding:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,0.07);}
+.day-labels{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-size:0.75rem;font-weight:600;color:#999;margin-bottom:0.5rem;}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:0.9rem;cursor:pointer;transition:all 0.15s;border:2px solid transparent;}
+.day:hover{background:#e8f5f3;}
+.day.empty{cursor:default;}
+.day.today{border-color:var(--accent);font-weight:700;}
+.day.blocked{background:#c0392b;color:white;border-color:#c0392b;}
+.day.blocked:hover{background:#a93226;}
+.day.past{opacity:0.35;cursor:default;pointer-events:none;}
+
+/* Legend */
+.legend{display:flex;gap:1rem;margin:1rem 0;font-size:0.82rem;align-items:center;}
+.dot{width:14px;height:14px;border-radius:50%;display:inline-block;}
+.dot.blocked{background:#c0392b;}
+.dot.available{background:#e8f5f3;border:2px solid var(--accent);}
+
+/* Blocked list */
+.blocked-list{background:white;border-radius:16px;padding:1.2rem;margin-top:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,0.07);}
+.blocked-list h3{font-family:"Playfair Display",serif;font-size:1rem;margin-bottom:0.8rem;color:var(--green);}
+.blocked-list ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem;}
+.blocked-list li{display:flex;justify-content:space-between;align-items:center;background:#fff0f0;border-radius:8px;padding:0.5rem 0.8rem;font-size:0.9rem;}
+.blocked-list li button{background:none;border:none;color:#c0392b;cursor:pointer;font-size:1rem;}
+.empty-msg{color:#aaa;font-size:0.88rem;}
+
+.tip{background:#e8f5f3;border-radius:12px;padding:0.8rem 1rem;font-size:0.82rem;color:var(--green);margin-top:1rem;line-height:1.5;}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>🗓️ My Availability</h1>
+  <span>Only you can see this page</span>
+</div>
+
+<div class="container">
+
+  <div class="month-nav">
+    <button onclick="changeMonth(-1)">‹</button>
+    <h2 id="month-label"></h2>
+    <button onclick="changeMonth(1)">›</button>
+  </div>
+
+  <div class="cal">
+    <div class="day-labels">
+      <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
+      <div>Thu</div><div>Fri</div><div>Sat</div>
+    </div>
+    <div class="days" id="days"></div>
+  </div>
+
+  <div class="legend">
+    <span><span class="dot blocked"></span> Blocked (unavailable)</span>
+    <span><span class="dot available"></span> Today</span>
+  </div>
+
+  <div class="tip">
+    👆 <strong>Tap any date</strong> to block it (customers can't book).<br>
+    Tap again to unblock it. Simple!
+  </div>
+
+  <div class="blocked-list">
+    <h3>🚫 Blocked Dates</h3>
+    <ul id="blocked-list-ul"><li class="empty-msg">No dates blocked yet.</li></ul>
+  </div>
+
+</div>
+
+<script>
+let current = new Date();
+current.setDate(1);
+
+function getBlocked() {
+  try { return JSON.parse(localStorage.getItem("nzt_blocked") || "[]"); }
+  catch(e) { return []; }
+}
+function saveBlocked(arr) {
+  localStorage.setItem("nzt_blocked", JSON.stringify(arr));
+}
+
+function toDateStr(y, m, d) {
+  return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+}
+
+function toggleDate(dateStr) {
+  let blocked = getBlocked();
+  if (blocked.includes(dateStr)) {
+    blocked = blocked.filter(d => d !== dateStr);
+  } else {
+    blocked.push(dateStr);
+  }
+  saveBlocked(blocked);
+  renderCalendar();
+  renderList();
+}
+
+function renderCalendar() {
+  const blocked = getBlocked();
+  const today = new Date();
+  const todayStr = toDateStr(today.getFullYear(), today.getMonth(), today.getDate());
+  const y = current.getFullYear();
+  const m = current.getMonth();
+
+  const months = ["January","February","March","April","May","June",
+                  "July","August","September","October","November","December"];
+  document.getElementById("month-label").textContent = `${months[m]} ${y}`;
+
+  const firstDay = new Date(y, m, 1).getDay();
+  const daysInMonth = new Date(y, m+1, 0).getDate();
+
+  const container = document.getElementById("days");
+  container.innerHTML = "";
+
+  // Empty cells before first day
+  for (let i = 0; i < firstDay; i++) {
+    const empty = document.createElement("div");
+    empty.className = "day empty";
+    container.appendChild(empty);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dateStr = toDateStr(y, m, d);
+    const isPast = dateStr < todayStr;
+    const isToday = dateStr === todayStr;
+    const isBlocked = blocked.includes(dateStr);
+
+    const div = document.createElement("div");
+    div.textContent = d;
+    div.className = "day" +
+      (isPast ? " past" : "") +
+      (isToday ? " today" : "") +
+      (isBlocked ? " blocked" : "");
+
+    if (!isPast) {
+      div.title = isBlocked ? "Click to unblock" : "Click to block";
+      div.onclick = () => toggleDate(dateStr);
+    }
+    container.appendChild(div);
+  }
+}
+
+function renderList() {
+  const blocked = getBlocked().sort();
+  const ul = document.getElementById("blocked-list-ul");
+  ul.innerHTML = "";
+  if (blocked.length === 0) {
+    ul.innerHTML = '<li class="empty-msg">No dates blocked yet.</li>';
+    return;
+  }
+  blocked.forEach(dateStr => {
+    const d = new Date(dateStr + "T12:00:00");
+    const label = d.toLocaleDateString("en-NZ", {weekday:"short", day:"numeric", month:"long", year:"numeric"});
+    const li = document.createElement("li");
+    li.innerHTML = `<span>🚫 ${label}</span><button onclick="toggleDate('${dateStr}')" title="Unblock">✕</button>`;
+    ul.appendChild(li);
+  });
+}
+
+function changeMonth(dir) {
+  current.setMonth(current.getMonth() + dir);
+  renderCalendar();
+}
+
+renderCalendar();
+renderList();
+</script>
+</body>
+</html>
